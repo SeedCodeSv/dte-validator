@@ -1,0 +1,25 @@
+{
+  "name": "@SeedCodeSv/dte-validator",
+  "version": "1.0.0",
+  "description": "Librería central de tipos y validadores para DTE El Salvador",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc && cp -r src/schemas dist/",
+    "prepublishOnly": "npm run build"
+  },
+  "publishConfig": {
+    "@SeedCodeSv:registry": "https://npm.pkg.github.com"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}

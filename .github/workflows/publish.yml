@@ -1,0 +1,26 @@
+name: Publish Package to GitHub Packages
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Configura Node.js y genera el archivo .npmrc automáticamente en el runner
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@SeedCodeSv'
+
+      - run: npm ci
+      - run: npm run build
+      
+      # Publica usando el token que GitHub genera en el workflow
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
