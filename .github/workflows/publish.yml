@@ -22,7 +22,7 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           scope: '@SeedCodeSv'
 
-      - run: npm ci
+      - run: npm install
       - run: npm run build
       
       # Publica usando el token que GitHub genera en el workflow
