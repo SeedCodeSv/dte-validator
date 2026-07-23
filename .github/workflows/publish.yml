@@ -18,7 +18,7 @@ jobs:
       # Configura Node.js y genera el archivo .npmrc automáticamente en el runner
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           registry-url: 'https://npm.pkg.github.com'
           scope: '@SeedCodeSv'
 
