@@ -4,7 +4,7 @@ export interface IdentificacionInvalidacionV3 {
   codigoGeneracion: string;
   fecEmi: string;
   horEmi: string;
-  fusion?: string | null;
+  fusion: string | null;
 }
 
 export interface EmisorInvalidacionV3 {
@@ -12,24 +12,24 @@ export interface EmisorInvalidacionV3 {
   nombre: string;
   telefono: string;
   correo: string;
-  codEstable?: string | null;
+  codEstable: string | null;
   codEstableMH: string;
-  codPuntoVenta?: string | null;
+  codPuntoVenta: string | null;
   codPuntoVentaMH: string;
 }
 
 export interface DocumentoInvalidacionV3 {
   tipoDte: string;
   codigoGeneracion: string;
-  codigoGeneracionR?: string | null;
+  codigoGeneracionR: string | null;
   selloRecibido: string;
   numeroControl: string;
   fecEmi: string;
-  tipoDocumento?: string | null;
-  numDocumento?: string | null;
+  tipoDocumento: string | null;
+  numDocumento: string | null;
   nombre: string;
-  telefono?: string | null;
-  correo?: string | null;
+  telefono: string | null;
+  correo: string | null;
 }
 
 export interface MotivoInvalidacionV3 {
