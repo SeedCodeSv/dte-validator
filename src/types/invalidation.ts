@@ -49,3 +49,9 @@ export interface InvalidacionV3 {
   documento: DocumentoInvalidacionV3;
   motivo: MotivoInvalidacionV3;
 }
+
+export interface ISignInvalidation {
+  nit: string;
+  passwordPri: string;
+  dteJson: InvalidacionV3;
+}
