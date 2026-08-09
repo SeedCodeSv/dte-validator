@@ -5,4 +5,4 @@ export * from './types/invalidation';
 export { validateInvalidacionV3, ValidationResult } from './validators/invalidation.validator';
 
 // Exportar Utilidades
-export { generateControl, returnTypeDte, formatNumber } from './utils/dte.utils';
+export { generateControl, returnDteCode, formatNumber } from './utils/dte.utils';

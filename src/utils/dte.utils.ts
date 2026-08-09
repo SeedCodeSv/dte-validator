@@ -20,7 +20,7 @@ export function generateControl(
  * @param dteType - Tipo de dte (FE, CCFE, NCE, NDE, FSE)
  * @returns Código de tipo de DTE
  */
-export function returnTypeDte(dteType: string): string {
+export function returnDteCode(dteType: string): string {
   switch (dteType) {
     case 'FE':
       return '01';
