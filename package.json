@@ -1,6 +1,6 @@
 {
   "name": "@SeedCodeSv/dte-validator",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "Librería central de tipos y validadores para DTE El Salvador",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
