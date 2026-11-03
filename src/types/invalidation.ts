@@ -23,18 +23,18 @@ export interface DocumentoInvalidacionV3 {
   codigoGeneracion: string;
   codigoGeneracionR: string | null;
   selloRecibido: string;
-  numeroControl: string;
+  numeroControl: string | null;
   fecEmi: string;
   tipoDocumento: string | null;
   numDocumento: string | null;
-  nombre: string;
+  nombre: string | null;
   telefono: string | null;
   correo: string | null;
 }
 
 export interface MotivoInvalidacionV3 {
   tipoAnulacion: number;
-  motivoAnulacion: string;
+  motivoAnulacion: string | null;
   nombreResponsable: string;
   tipDocResponsable: string;
   numDocResponsable: string;

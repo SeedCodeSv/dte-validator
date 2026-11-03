@@ -1,8 +1,8 @@
 
+
 import type {
   ApendiceItem,
   Direccion,
-  EmisorDireccion,
   Identificacion,
   PagosItem,
   SVFE_Send,
@@ -10,11 +10,11 @@ import type {
 
 export interface FSE_Emisor {
   nit: string;
-  nrc: string;
+  nrc: string | null;
   nombre: string;
   codActividad: string;
   descActividad: string;
-  direccion: EmisorDireccion;
+  direccion: Direccion;
   telefono: string;
   correo: string;
   codEstable: string | null;
@@ -51,14 +51,14 @@ export interface FSE_Resumen {
   subTotal: number;
   reteRenta: number;
   totalPagar: number;
-  totalLetras: string;
+  totalLetras: string | null;
   condicionOperacion: number;
   pagos: PagosItem[] | null;
   observaciones: string | null;
 }
 
 export interface SVFE_FSE {
-  identificacion: Identificacion<2>;
+  identificacion: Identificacion<2, '14'>;
   emisor: FSE_Emisor;
   receptor: FSE_Receptor;
   cuerpoDocumento: FSE_CuerpoDocumentoItems[];
