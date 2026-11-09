@@ -4,6 +4,7 @@ export * from './types/fc-cf';
 export * from './types/fse';
 export * from './types/contingencia';
 export * from './types/eret';
+export * from './types/nc-nd';
 
 // Exportar Validadores
 export { validateInvalidacionV3, ValidationResult } from './validators/invalidation.validator';
