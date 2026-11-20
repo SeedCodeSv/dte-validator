@@ -4,7 +4,11 @@ import feNrV4Schema from '../schemas/fe-nr-v4.json';
 import { SVFE_NR } from '../types/nr';
 import type { ValidationResult } from './invalidation.validator';
 
-const ajv = new Ajv({ allErrors: true });
+// multipleOfPrecision: el esquema pide multipleOf 1e-8, pero en doble precision
+// un valor legal como 1.13 no divide exacto (1.13/1e-8 = 112999999.99999999) y
+// ajv lo rechazaria. Con 7 digitos se aceptan las fracciones reales del schema
+// (hasta 8 decimales) y sigue cayendo un numero con 9.
+const ajv = new Ajv({ allErrors: true, multipleOfPrecision: 7 });
 addFormats(ajv);
 
 const validateRaw = ajv.compile(feNrV4Schema);

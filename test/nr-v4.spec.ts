@@ -166,7 +166,16 @@ for (const mutar of [
   assert.equal(r.isValid, true, `rechazado lo que fe-nr-v4 admite: ${JSON.stringify(r.errors)}`);
 }
 
-// 4. El contrato de claves que los tipos de types/nr.ts tienen que espejar.
+// 4. Precio con las fracciones que genera el POS: 4 decimales y centavos que no
+//    dividen exacto en punto flotante. El validador no puede rechazarlos.
+for (const precioUni of [1.13, 0.3097, 0.8761, 45678.12345678, 3333333.3333]) {
+  const d = documentoValido();
+  d.cuerpoDocumento[0].precioUni = precioUni;
+  const r = validateNotaRemisionV4(d);
+  assert.equal(r.isValid, true, `precioUni ${precioUni} rechazado: ${JSON.stringify(r.errors)}`);
+}
+
+// 5. El contrato de claves que los tipos de types/nr.ts tienen que espejar.
 assert.deepEqual(
   Object.keys(schema.properties).sort(),
   [
@@ -190,4 +199,6 @@ assert.equal(propiedades(['emisor', 'properties']).length, 11, 'emisor: 11 clave
 assert.equal(propiedades(['receptor', 'properties']).length, 11, 'receptor: 11 claves');
 assert.equal(propiedades(['resumen', 'properties']).length, 14, 'resumen: 14 claves');
 
-console.log('nr-v4: documento valido, 13 rechazos en su bloque, 4 casos legales, contrato de claves ok');
+console.log(
+  'nr-v4: documento valido, 13 rechazos en su bloque, 4 casos legales, 5 precios con fracciones, contrato de claves ok',
+);
