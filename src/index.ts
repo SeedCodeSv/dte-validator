@@ -3,6 +3,7 @@ export * from './types/invalidation';
 export * from './types/fc-cf';
 export * from './types/fse';
 export * from './types/contingencia';
+export * from './types/eret';
 export * from './types/nc-nd';
 export * from './types/nr';
 
