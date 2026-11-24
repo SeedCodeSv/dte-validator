@@ -12,13 +12,8 @@ import type {
   VentaTercero,
 } from './fc-cf'
 
-/** Version del esquema JSON de las notas de crédito y debito. */
 export const NOTA_VERSION = 4
 
-/**
- * Identificacion de una nota (v4). `fe-nc-v4` y `fe-nd-v4` agregan `fusion`
- * al bloque comun de `identificacion`.
- */
 export interface NotaIdentificacion<TTipoDte extends '05' | '06'> {
   version: typeof NOTA_VERSION
   ambiente: Ambiente
@@ -32,18 +27,12 @@ export interface NotaIdentificacion<TTipoDte extends '05' | '06'> {
   fecEmi: string
   horEmi: string
   tipoMoneda: TipoMoneda
-  /** NIT del emisor fusionado (solo cuando aplica); `null` si no hay fusion. */
   fusion: string | null
 }
 
 export type NC_Identificacion = NotaIdentificacion<'05'>
 
 export type ND_Identificacion = NotaIdentificacion<'06'>
-
-/**
- * Emisor v4: a diferencia del CCF no lleva `codEstable`/`codPuntoVenta` ni
- * `tipoEstablecimiento`, porque el esquema no los declara.
- */
 export interface NotaEmisor {
   nit: string
   nrc: string | null
@@ -56,7 +45,6 @@ export interface NotaEmisor {
   correo: string
 }
 
-/** Receptor v4: exige tipo y numero de documento ademas del NRC. */
 export interface NotaReceptor {
   tipoDocumento: string
   numDocumento: string
@@ -70,7 +58,6 @@ export interface NotaReceptor {
   correo: string | null
 }
 
-/** Item de `cuerpoDocumento` de una nota v4 (sin `psv` y con IVA propio). */
 export interface NotaCuerpoDocumentoItem {
   numItem: number
   tipoItem: number
@@ -92,7 +79,6 @@ export interface NotaCuerpoDocumentoItem {
   ivaRete: number
 }
 
-/** Resumen comun de la nota de credito v4. */
 export interface NC_Resumen {
   totalNoSuj: number
   totalExenta: number
@@ -112,12 +98,10 @@ export interface NC_Resumen {
   codigoRetencionMH: string | null
 }
 
-/** La nota de debito agrega el numero de pago electronico al resumen. */
 export interface ND_Resumen extends NC_Resumen {
   numPagoElectronico: string | null
 }
 
-/** Nota de Credito (tipoDte `05`, version 4). No tiene `extension`. */
 export interface SVFE_NC {
   identificacion: NC_Identificacion
   documentoRelacionado: DocumentoRelacionadoItem[]
@@ -129,7 +113,6 @@ export interface SVFE_NC {
   apendice: ApendiceItem[] | null
 }
 
-/** Nota de Debito (tipoDte `06`, version 4). No tiene `extension`. */
 export interface SVFE_ND {
   identificacion: ND_Identificacion
   documentoRelacionado: DocumentoRelacionadoItem[]
