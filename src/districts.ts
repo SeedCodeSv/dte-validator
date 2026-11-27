@@ -48,7 +48,7 @@ export const DISTRITOS_SV: DistrictRecord[] = [
   {
     "id": 3,
     "distrito": "SAN LORENZO",
-    "codigo_distrito": "08",
+    "codigo_distrito": "09",
     "municipio": "AHUACHAPAN NORTE",
     "codigo_municipio": "13",
     "departamento": "Ahuachapán",
@@ -1268,7 +1268,7 @@ export const DISTRITOS_SV: DistrictRecord[] = [
   {
     "id": 125,
     "distrito": "EL CARMEN",
-    "codigo_distrito": "05",
+    "codigo_distrito": "03",
     "municipio": "CUSCATLAN SUR",
     "codigo_municipio": "18",
     "departamento": "Cuscatlán",
@@ -1308,7 +1308,7 @@ export const DISTRITOS_SV: DistrictRecord[] = [
   {
     "id": 129,
     "distrito": "EL ROSARIO",
-    "codigo_distrito": "07",
+    "codigo_distrito": "04",
     "municipio": "CUSCATLAN SUR",
     "codigo_municipio": "18",
     "departamento": "Cuscatlán",
@@ -1498,7 +1498,7 @@ export const DISTRITOS_SV: DistrictRecord[] = [
   {
     "id": 148,
     "distrito": "EL ROSARIO",
-    "codigo_distrito": "07",
+    "codigo_distrito": "02",
     "municipio": "LA PAZ CENTRO",
     "codigo_municipio": "24",
     "departamento": "La Paz",
