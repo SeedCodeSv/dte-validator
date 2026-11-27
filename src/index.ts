@@ -6,6 +6,9 @@ export * from './types/contingencia';
 export * from './types/eret';
 export * from './types/nc-nd';
 
+// Exportar Catálogos
+export * from './districts';
+
 // Exportar Validadores
 export { validateInvalidacionV3, ValidationResult } from './validators/invalidation.validator';
 
