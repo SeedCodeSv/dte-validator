@@ -48,7 +48,6 @@ export interface Identificacion<
   tipoMoneda: TipoMoneda
 }
 
-/** Emisor de factura y CCF (no admite `tipoEstablecimiento` ni `codEstableMH`). */
 export interface Emisor {
   nit: string
   nrc: string
@@ -69,8 +68,6 @@ export interface DocumentoRelacionadoItem {
   numeroDocumento: string
   fechaEmision: string
 }
-
-/** Datos del médico que presta el servicio (documento asociado tipo 4). */
 export interface OtrosDocumentosMedico {
   nombre: string | null
   nit: string | null
@@ -84,8 +81,6 @@ export interface OtrosDocumentosItem {
   detalleDocumento: string | null
   medico: OtrosDocumentosMedico | null
 }
-
-/** Venta por cuenta de terceros: es un objeto, no un arreglo. */
 export interface VentaTercero {
   nit: string | null
   nombre: string
@@ -169,7 +164,6 @@ export interface FC_Resumen {
   observaciones: string | null
 }
 
-/** Factura Electrónica (tipoDte `01`, versión 2). No tiene `extension`. */
 export interface SVFE_FC {
   identificacion: Identificacion<2, '01'>
   emisor: Emisor
@@ -238,7 +232,6 @@ export interface CF_Resumen {
   observaciones: string | null
 }
 
-/** Comprobante de Crédito Fiscal (tipoDte `03`, versión 4). No tiene `extension`. */
 export interface SVFE_CF {
   identificacion: Identificacion<4, '03'>
   emisor: Emisor
