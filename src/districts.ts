@@ -1,16 +1,10 @@
 /**
- * CAT-008 — Catálogo oficial de distritos del Ministerio de Hacienda (El Salvador).
+ * CAT-008 — Catálogo oficial de distritos del MH (El Salvador), 263 filas.
  *
- * 263 filas. Fuente canónica para el código de distrito de la dirección del DTE
- * (catálogo MH v2). `distrito` es el NOMBRE del distrito y `codigo_distrito` su
- * código MH de 2 dígitos (con cero a la izquierda).
- *
- * Los códigos solo son únicos dentro de un municipio: 5 nombres se repiten entre
- * municipios (EL ROSARIO x3, SAN LORENZO, SAN FERNANDO, EL CARMEN, SAN ISIDRO),
- * por lo que la clave única es (departamento, municipio, nombre): nunca resolver
- * un distrito por nombre a secas.
- *
- * La última fila (id 263) es el caso especial "Otro (Para extranjeros)", código 00.
+ * Los códigos solo son únicos dentro de un municipio: 5 nombres se repiten
+ * (EL ROSARIO x3, SAN LORENZO, SAN FERNANDO, EL CARMEN, SAN ISIDRO), así que la
+ * clave única es (departamento, municipio, nombre): nunca resolver por nombre a
+ * secas. La última fila es el caso especial "Otro (Para extranjeros)", código 00.
  */
 
 export interface DistrictRecord {
